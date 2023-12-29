@@ -1,0 +1,367 @@
+body {
+  font-family: "Regular";
+  width: 100%;
+  height: 100%;
+  background-color: rgb(42, 44, 49);
+  color: #d5d3c5;
+}
+
+@font-face {
+  font-family: "Regular";
+  src: local("Arvo-Regular"), url("./Arvo-Regular.ttf") format("truetype");
+}
+
+.Container {
+  align-content: center;
+  align-self: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 150px 1fr;
+  grid-template-rows: 50px 45px 1fr 70px;
+  grid-template-areas:
+    "Pic Header"
+    "Pic Nav"
+    "Pic Content"
+    "Footer Footer";
+}
+
+.Content {
+  padding-top: 15px;
+  grid-area: Content;
+  display: grid;
+  overflow-y: auto;
+}
+
+.AsideLeft {
+  width: 35%;
+  margin-right: 10px;
+  display: block;
+}
+
+AsideRight {
+  width: 60%;
+}
+
+.Content ul {
+  padding: 0px;
+}
+
+.Content li {
+  list-style:none;
+}
+
+.Content li a {
+  text-decoration: none;
+  color:#d5d3c5;
+}
+
+.Content li::before{
+  content: "\27A4";
+}
+
+.Content li:hover {
+  transform: translateX(3px);
+  transition: 0.3s;
+}
+
+.Contentmenu select {
+  height: 25px;
+  width: 200px;
+  background: none;
+  font-size: 1em;
+}
+
+.Content option {
+  background: none;
+}
+
+input[type=text], input[type=email], textarea {
+  width: 97%;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  padding: 12px;
+  border-radius: 25px;
+  border: 1px dashed #2a2c31;
+  background-color: #d5d3c5;
+  color: #2a2c31;
+}
+
+label {
+  margin-top: 20px;
+}
+
+input[type=text]:hover, input[type=email]:hover, textarea:hover {
+  border: 1px solid #2a2c31;
+  background: white;
+  color: black;
+}
+
+input[type=text]:focus, input[type=email]:focus, textarea:focus{
+  border: 1px solid #2a2c31;
+  background: white;
+  color:black;
+}
+
+input[type=button] {
+  visibility: visible;
+  background: none;
+  border: 1px dashed #2a2c31;
+  color: white;
+  border-radius: 25px;
+  margin-top: 15px;
+  width: 99%;
+  font-size: large;
+  overflow:hidden
+}
+
+input[type=button]:disabled{
+ visibility: hidden;
+}
+
+.Header {
+  grid-area: Header;
+}
+
+.Header input {
+  position: fixed;
+}
+
+.Header input[type=list] {
+  top: 20px;
+  right: 30px;
+  border-radius: 25px;
+  border: 1px dashed #2a2c31;
+  background-color: #d5d3c5;
+  margin-top: 10px;
+  padding: 5px;
+  height: 15px;
+  width: 100px;
+  max-width: fit-content;
+  transition: width 1s;
+  text-decoration-line:none;
+}
+
+.Header input[type=list]:hover {
+  width: 500px;
+  border: 1px solid #2a2c31;
+  background: white;
+  color: black;
+}
+
+.Header input[type=list]:focus{
+  width: 500px;
+  background: white;
+  color:black;
+}
+
+.Header input[type=button]{
+  margin-top: 10px;
+  top: 19px;
+  right: 10px;
+  width: 20px;
+  border: none;
+  text-decoration: none;
+}
+
+.Pic img {
+  width: 75px;
+  border-radius: 50%;
+  border: dashed 1px #d5d3c5;
+  margin: 50px 0px 0px 20px;
+  padding: 5px;
+  transition: all 0.4s;
+}
+
+.Pic img:hover {
+  background-color: #d5d3c5;
+}
+
+.Nav {
+  grid-area: Nav;
+  display: flex;
+  flex-direction: column;
+  margin-top: 10px;
+  border-bottom: 1px dashed #d5d3c5;
+}
+.NavLight {
+  grid-area: Nav;
+  display: flex;
+  flex-direction: column;
+  margin-top: 10px;
+  border-bottom: 1px dashed #2a2c31;
+}
+
+.Nav ul {
+  margin: 0px;
+  padding: 0px;
+}
+
+.NavLight ul {
+  margin: 0px;
+  padding: 0px;
+}
+
+.Nav a {
+  text-decoration: none;
+  display: inline-block;
+  list-style: none;
+  padding: 10px 10px 10px 10px;
+  color: #d5d3c5;
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  position: relative;
+  overflow: hidden;
+}
+
+.NavLight a {
+  text-decoration: none;
+  display: inline-block;
+  list-style: none;
+  padding: 10px 10px 10px 10px;
+  color: #2a2c31;
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  position: relative;
+  overflow: hidden;
+}
+
+.Nav a:before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  left: 51%;
+  right: 51%;
+  bottom: 0;
+  background: #d5d3c5;
+  height: 4px;
+  -webkit-transition-property: left, right;
+  transition-property: left, right;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
+}
+
+.NavLight a:before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  left: 51%;
+  right: 51%;
+  bottom: 0;
+  background: #d5d3c5;
+  height: 4px;
+  -webkit-transition-property: left, right;
+  transition-property: left, right;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
+}
+
+.Nav a:hover:before, .Nav a:focus:before, .Nav a:active:before{
+  left: 0;
+  right: 0;
+}
+
+.NavLight a:hover:before, .Nav a:focus:before, .Nav a:active:before {
+  left: 0;
+  right: 0;
+}
+
+.NavLight NavLink {
+  list-style: none;
+  background-color: #d5d3c5;
+  color: #2a2c31;
+  border-radius: 20px;
+}
+
+.Nav NavLink {
+  list-style: none;
+  background-color: #d5d3c5;
+  color: #2a2c31;
+  border-radius: 20px;
+}
+
+main {
+  width: 80%;
+}
+
+main a, a:visited {
+  color:#d5d3c5;
+}
+
+article a, a:visited {
+  color:#d5d3c5;
+}
+
+.Assignments {
+  display: grid;
+  grid-template-columns: 150px 150px;
+}
+
+.Assignments article {
+  padding: 2px;
+  margin: 4px;
+  align-items: center;
+  align-content: center;
+  align-self: center;
+  border-radius: 25px;
+  border: 1px dashed #2a2c31;
+}
+
+pre{
+  border-left:"10px solid #1f2024";
+  background-color: #1f202491;
+  width: fit-content;
+}
+
+code {
+  font-family: 'Courier New', Courier, monospace;
+  color: #d5d3c5;
+
+}
+
+pre {
+  white-space: pre-wrap;
+}
+pre::before {
+  counter-reset: listing;
+}
+pre code {
+  counter-increment: listing;
+}
+pre code::before {
+  content: counter(listing) " ";
+  display: inline-block;
+  padding-left: auto;
+  margin-left: auto;
+  text-align: left;
+}
+
+.Footer {
+  bottom: 0px;
+  width: 100%;
+  display: inline-block;
+  align-items: center;
+  justify-items: center;
+  text-align: center;
+  grid-area: Footer;
+  vertical-align: middle;
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  position: relative;
+  bottom: 0;
+  overflow: hidden;
+}
+
+
+.Footer a {
+  text-decoration: none;
+  color: #d5d3c5;
+}
